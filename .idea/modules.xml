@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Seccion11-Navigation-Component-Udemy.iml" filepath="$PROJECT_DIR$/.idea/modules/Seccion11-Navigation-Component-Udemy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Seccion11-Navigation-Component-Udemy.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Seccion11-Navigation-Component-Udemy.app.iml" />
     </modules>
   </component>
 </project>
