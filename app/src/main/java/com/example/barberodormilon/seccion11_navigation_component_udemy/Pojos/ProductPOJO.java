@@ -1,4 +1,4 @@
-package com.example.barberodormilon.seccion11_navigation_component_udemy;
+package com.example.barberodormilon.seccion11_navigation_component_udemy.Pojos;
 
 public class ProductPOJO {
     private String name;

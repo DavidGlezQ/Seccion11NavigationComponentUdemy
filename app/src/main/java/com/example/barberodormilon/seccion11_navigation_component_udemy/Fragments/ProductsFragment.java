@@ -1,10 +1,11 @@
-package com.example.barberodormilon.seccion11_navigation_component_udemy;
+package com.example.barberodormilon.seccion11_navigation_component_udemy.Fragments;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,11 +14,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.barberodormilon.seccion11_navigation_component_udemy.Interfaces.OnClickListener;
+import com.example.barberodormilon.seccion11_navigation_component_udemy.Adapters.ProductAdapter;
+import com.example.barberodormilon.seccion11_navigation_component_udemy.Pojos.ProductPOJO;
+import com.example.barberodormilon.seccion11_navigation_component_udemy.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class ProductsFragment extends Fragment implements OnClickListener{
+public class ProductsFragment extends Fragment implements OnClickListener {
 
     private final List<ProductPOJO> selectedProduct = new ArrayList<>();
 
@@ -36,6 +42,8 @@ public class ProductsFragment extends Fragment implements OnClickListener{
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(adapter);
+
+        view.findViewById(R.id.btn_add_car).setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_productsFragment_to_cardFragment));
     }
 
     private List<ProductPOJO> getProducts() {

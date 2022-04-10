@@ -1,4 +1,4 @@
-package com.example.barberodormilon.seccion11_navigation_component_udemy;
+package com.example.barberodormilon.seccion11_navigation_component_udemy.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.barberodormilon.seccion11_navigation_component_udemy.Interfaces.OnClickListener;
+import com.example.barberodormilon.seccion11_navigation_component_udemy.Pojos.ProductPOJO;
+import com.example.barberodormilon.seccion11_navigation_component_udemy.R;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;

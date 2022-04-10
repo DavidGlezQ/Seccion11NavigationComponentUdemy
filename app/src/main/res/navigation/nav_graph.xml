@@ -8,7 +8,21 @@
 
     <fragment
         android:id="@+id/productsFragment"
-        android:name="com.example.barberodormilon.seccion11_navigation_component_udemy.ProductsFragment"
+        android:name="com.example.barberodormilon.seccion11_navigation_component_udemy.Fragments.ProductsFragment"
         android:label="@string/products_title"
-        tools:layout="@layout/fragment_products" />
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/action_productsFragment_to_cardFragment"
+            app:destination="@id/cardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.example.barberodormilon.seccion11_navigation_component_udemy.Fragments.CardFragment"
+        android:label="fragment_card"
+        tools:layout="@layout/fragment_card" >
+        <action
+            android:id="@+id/action_cardFragment_to_productsFragment"
+            app:destination="@id/productsFragment" />
+    </fragment>
 </navigation>

@@ -6,4 +6,8 @@
     <string name="item_product_photo_description">Imagen del producto</string>
     <string name="item_prduct_name_hint">Nombre del producto</string>
     <string name="products_add_car">Añadir</string>
+    <string name="card_price">$1.00</string>
+    <string name="products_check_list">Pedido:</string>
+    <string name="car_pay">Pagar</string>
+    <string name="car_back">Regresar</string>
 </resources>
