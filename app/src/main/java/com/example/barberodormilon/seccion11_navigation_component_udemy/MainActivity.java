@@ -3,6 +3,7 @@ package com.example.barberodormilon.seccion11_navigation_component_udemy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -11,10 +12,16 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
     private NavController navController;
+    private BottomSheetBehavior bottomSheetBehavior;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
             toolbar.setTitle(navDestination.getLabel());
             toolbar.setNavigationIcon(null);
         });
+
+        ConstraintLayout bottomSheet = findViewById(R.id.bottom_sheet);
+        ImageButton btnClose = findViewById(R.id.btnClose);
+        MaterialButton btnExit = findViewById(R.id.btnExit);
+
+        btnClose.setOnClickListener(view -> bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN));
+        btnExit.setOnClickListener(view -> finish());
+
+        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
     }
 
     @Override
@@ -51,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        /*new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.bottom_sheet_tittle)
+                .setPositiveButton(R.string.bottom_sheet_exit, (dialogInterface, i) -> finish())
+                .setNegativeButton("Cancelar", null).show();*/
 
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
     }
 }

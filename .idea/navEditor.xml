@@ -8,13 +8,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="action_global_conformationFragment">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="cardFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-1169" />
-                            <option name="y" value="-144" />
+                            <option name="x" value="-1149" />
+                            <option name="y" value="-103" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -39,8 +44,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-955" />
-                            <option name="y" value="-537" />
+                            <option name="x" value="-994" />
+                            <option name="y" value="-487" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -60,8 +65,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-1459" />
-                            <option name="y" value="-127" />
+                            <option name="x" value="-1476" />
+                            <option name="y" value="-284" />
                           </Point>
                         </option>
                         <option name="myPositions">

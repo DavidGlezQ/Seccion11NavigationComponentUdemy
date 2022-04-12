@@ -18,6 +18,8 @@ import com.example.barberodormilon.seccion11_navigation_component_udemy.Interfac
 import com.example.barberodormilon.seccion11_navigation_component_udemy.Adapters.ProductAdapter;
 import com.example.barberodormilon.seccion11_navigation_component_udemy.Pojos.ProductPOJO;
 import com.example.barberodormilon.seccion11_navigation_component_udemy.R;
+import com.google.android.material.transition.MaterialFadeThrough;
+import com.google.android.material.transition.MaterialSharedAxis;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +28,16 @@ import java.util.List;
 public class ProductsFragment extends Fragment implements OnClickListener {
 
     private final List<ProductPOJO> selectedProduct = new ArrayList<>();
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setEnterTransition(new MaterialFadeThrough());
+
+        setReenterTransition(new MaterialSharedAxis(MaterialSharedAxis.X, false));
+        setEnterTransition(new MaterialSharedAxis(MaterialSharedAxis.X, true));
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

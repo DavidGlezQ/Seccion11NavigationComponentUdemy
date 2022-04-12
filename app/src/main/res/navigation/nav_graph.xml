@@ -13,7 +13,12 @@
         tools:layout="@layout/fragment_products">
         <action
             android:id="@+id/action_productsFragment_to_cardFragment"
-            app:destination="@id/cardFragment" />
+            app:destination="@id/cardFragment"/>
+        <!--<action
+            android:id="@+id/action_productsFragment_to_cardFragment"
+            app:destination="@id/cardFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out" />-->
     </fragment>
 
     <fragment
@@ -23,7 +28,12 @@
         tools:layout="@layout/fragment_card" >
         <action
             android:id="@+id/action_cardFragment_to_productsFragment"
-            app:destination="@id/productsFragment" />
+            app:destination="@id/productsFragment"/>
+        <!--<action
+            android:id="@+id/action_cardFragment_to_productsFragment"
+            app:destination="@id/productsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />-->
         <argument
             android:name="products"
             app:argType="string[]"
