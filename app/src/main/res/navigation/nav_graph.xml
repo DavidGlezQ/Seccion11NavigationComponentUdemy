@@ -9,8 +9,8 @@
     <fragment
         android:id="@+id/productsFragment"
         android:name="com.example.barberodormilon.seccion11_navigation_component_udemy.Fragments.ProductsFragment"
-        android:label="@string/products_title"
-        tools:layout="@layout/fragment_products" >
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_products">
         <action
             android:id="@+id/action_productsFragment_to_cardFragment"
             app:destination="@id/cardFragment" />
@@ -19,10 +19,29 @@
     <fragment
         android:id="@+id/cardFragment"
         android:name="com.example.barberodormilon.seccion11_navigation_component_udemy.Fragments.CardFragment"
-        android:label="fragment_card"
+        android:label="@string/car_title"
         tools:layout="@layout/fragment_card" >
         <action
             android:id="@+id/action_cardFragment_to_productsFragment"
             app:destination="@id/productsFragment" />
+        <argument
+            android:name="products"
+            app:argType="string[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_cardFragment_to_conformationFragment"
+            app:destination="@id/conformationFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/conformationFragment"
+        android:name="com.example.barberodormilon.seccion11_navigation_component_udemy.Fragments.ConfirmationFragment"
+        android:label="@string/confirmation_title"
+        tools:layout="@layout/fragment_confirmation" >
+        <action
+            android:id="@+id/action_conformationFragment_to_productsFragment"
+            app:destination="@id/productsFragment" />
+    </fragment>
+    <action android:id="@+id/action_global_conformationFragment"
+        app:destination="@id/conformationFragment"/>
 </navigation>

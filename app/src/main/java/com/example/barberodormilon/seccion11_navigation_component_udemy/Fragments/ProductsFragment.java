@@ -39,11 +39,17 @@ public class ProductsFragment extends Fragment implements OnClickListener {
         super.onViewCreated(view, savedInstanceState);
 
         ProductAdapter adapter = new ProductAdapter(getProducts(), this);
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(adapter);
 
-        view.findViewById(R.id.btn_add_car).setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_productsFragment_to_cardFragment));
+        view.findViewById(R.id.btn_add_car).setOnClickListener(view1 ->{
+            //NavHostFragment.findNavController(this).navigate(R.id.action_productsFragment_to_cardFragment));
+            ProductsFragmentDirections.ActionProductsFragmentToCardFragment action = ProductsFragmentDirections.actionProductsFragmentToCardFragment();
+            action.setProducts(getProductsStr());
+
+            NavHostFragment.findNavController(this).navigate(action);
+        });
     }
 
     private List<ProductPOJO> getProducts() {
@@ -63,8 +69,22 @@ public class ProductsFragment extends Fragment implements OnClickListener {
         return products;
     }
 
+    private String[] getProductsStr(){
+        String[] productsStr = new String[selectedProduct.size()];
+        int index = 0;
+        for (ProductPOJO productPOJO: selectedProduct){
+            productsStr[index] = productPOJO.getName();
+            index ++;
+        }
+        return productsStr;
+    }
+
     @Override
     public void onClick(ProductPOJO productPOJO) {
-
+        if (productPOJO.isSelected()){
+            selectedProduct.add(productPOJO);
+        } else {
+            selectedProduct.remove(productPOJO);
+        }
     }
 }

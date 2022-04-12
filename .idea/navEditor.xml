@@ -13,13 +13,39 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-1091" />
-                            <option name="y" value="-234" />
+                            <option name="x" value="-1169" />
+                            <option name="y" value="-144" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_cardFragment_to_conformationFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_cardFragment_to_productsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="conformationFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-955" />
+                            <option name="y" value="-537" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_conformationFragment_to_productsFragment">
                               <value>
                                 <LayoutPositions />
                               </value>

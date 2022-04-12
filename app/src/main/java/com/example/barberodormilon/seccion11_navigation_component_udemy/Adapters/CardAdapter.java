@@ -42,7 +42,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.tv_name);
+            tvName = itemView.findViewById(R.id.tvName);
         }
     }
 }
