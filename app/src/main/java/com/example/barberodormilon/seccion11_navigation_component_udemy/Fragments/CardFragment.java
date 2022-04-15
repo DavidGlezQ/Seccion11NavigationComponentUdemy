@@ -17,9 +17,12 @@ import android.widget.TextView;
 
 import com.example.barberodormilon.seccion11_navigation_component_udemy.Adapters.CardAdapter;
 import com.example.barberodormilon.seccion11_navigation_component_udemy.R;
+import com.example.barberodormilon.seccion11_navigation_component_udemy.databinding.FragmentCardBinding;
 import com.google.android.material.transition.MaterialSharedAxis;
 
 public class CardFragment extends Fragment {
+
+    private FragmentCardBinding binding;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,7 +39,9 @@ public class CardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_card, container, false);
+        //View view =  inflater.inflate(R.layout.fragment_card, container, false);
+        binding = FragmentCardBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
@@ -48,11 +53,13 @@ public class CardFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(cardAdapter);
 
-        TextView tvSum = view.findViewById(R.id.tvSum);
+        TextView tvSum = binding.tvSum;
         tvSum.setText(getString(R.string.car_sum, (float)cardAdapter.getItemCount()));
 
-        view.findViewById(R.id.btnBack).setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_cardFragment_to_productsFragment));
-        view.findViewById(R.id.btnPay).setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_cardFragment_to_conformationFragment));
+        //view.findViewById(R.id.btnBack).setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_cardFragment_to_productsFragment));
+        binding.btnBack.setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_cardFragment_to_productsFragment));
+        //view.findViewById(R.id.btnPay).setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_cardFragment_to_conformationFragment));
+        binding.btnPay.setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_cardFragment_to_conformationFragment));
 
         setHasOptionsMenu(true);
     }

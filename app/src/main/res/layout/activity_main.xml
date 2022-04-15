@@ -20,7 +20,11 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main"/>
-    <include layout="@layout/bottom_sheet_exit"/>
+    <include
+        android:id="@+id/content_main_container"
+        layout="@layout/content_main"/>
+    <include
+        android:id="@+id/bottom_sheet_container"
+        layout="@layout/bottom_sheet_exit"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

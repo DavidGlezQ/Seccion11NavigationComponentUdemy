@@ -14,35 +14,37 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
+import com.example.barberodormilon.seccion11_navigation_component_udemy.databinding.ActivityMainBinding;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ActivityMainBinding binding;
     private NavController navController;
     private BottomSheetBehavior bottomSheetBehavior;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(binding.toolbar);
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
 
-        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
         navController.addOnDestinationChangedListener((navController1, navDestination, bundle) -> {
-            toolbar.setTitle(navDestination.getLabel());
-            toolbar.setNavigationIcon(null);
+            binding.toolbar.setTitle(navDestination.getLabel());
+            binding.toolbar.setNavigationIcon(null);
         });
 
-        ConstraintLayout bottomSheet = findViewById(R.id.bottom_sheet);
-        ImageButton btnClose = findViewById(R.id.btnClose);
-        MaterialButton btnExit = findViewById(R.id.btnExit);
+        ConstraintLayout bottomSheet = binding.bottomSheetContainer.bottomSheet;
+        ImageButton btnClose = binding.bottomSheetContainer.btnClose;
+        MaterialButton btnExit = binding.bottomSheetContainer.btnExit;
 
         btnClose.setOnClickListener(view -> bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN));
         btnExit.setOnClickListener(view -> finish());
